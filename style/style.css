@@ -153,6 +153,14 @@ header .cv:hover {
     gap: 20px;
 }
 
+@media (max-width:767px) {
+    .hello .container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
 .hello .left {
     width: fit-content;
     color: white;
@@ -160,6 +168,15 @@ header .cv:hover {
     text-align: start;
     font-weight: bold;
     padding-top: 15%;
+}
+
+@media (max-width:767px) {
+    .hello .left {
+        text-align: center;
+        justify-content: center;
+        margin: 20px auto 30px;
+        width: 100%;
+    }
 }
 
 .hello .left .hell {
@@ -203,7 +220,7 @@ header .cv:hover {
 }
 
 .hello .right {
-    width: 25%;
+    width: 30%;
 }
 
 .hello .right .photo {
@@ -213,22 +230,39 @@ header .cv:hover {
 
 .hello .right .photo img {
     width: 100%;
-    position: relative;
+    transform: scale(1.5);
 }
 
-.hello .right::before {
+.hello .right .photo::before {
+    content: "";
     position: absolute;
+    width: 105%;
+    height: 105%;
     background-color: var(--main-color);
-    width: 100%;
-    height: 100%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    /* z-index: -1; */
-    top: 0;
+    z-index: -1;
+}
+
+.hello .right .photo::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--main-color);
+    top: 0%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 100;
+    opacity: 0.3;
 }
 
 .hello .right .photo .icons {
     position: absolute;
-    right: 80%;
+    left: 0%;
     top: 80%;
     display: flex;
     justify-content: space-between;
