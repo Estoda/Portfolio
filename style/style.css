@@ -141,7 +141,8 @@ header .cv:hover {
 /* End Header */
 /* Start Hello */
 .hello {
-    height: 90vh;
+    height: fit-content;
+    overflow: hidden;
 }
 
 .hello .container {
@@ -176,6 +177,12 @@ header .cv:hover {
         justify-content: center;
         margin: 20px auto 30px;
         width: 100%;
+    }
+
+    .hello .left a {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
     }
 }
 
@@ -223,6 +230,12 @@ header .cv:hover {
     width: 30%;
 }
 
+@media (max-width:767px) {
+    .hello .right {
+        width: 90%;
+    }
+}
+
 .hello .right .photo {
     position: relative;
     width: 100%;
@@ -262,8 +275,9 @@ header .cv:hover {
 
 .hello .right .photo .icons {
     position: absolute;
-    left: 0%;
+    left: 50%;
     top: 80%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -271,6 +285,15 @@ header .cv:hover {
     border-radius: 15px;
     width: 245px;
 }
+
+/* @media (max-width:767px) {
+
+    .hello .right .icons {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+} */
 
 .hello .right .photo .icons a {
     background-color: white;
@@ -291,3 +314,25 @@ header .cv:hover {
 }
 
 /* End Hello */
+/* Start Logos */
+.logos {
+    background-color: rgb(44, 44, 52);
+    margin-top: 30px;
+}
+
+.logos .container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.logos .logo {
+    width: 20%;
+}
+
+.logos .logo img {
+    width: 100%;
+}
+
+/* End Logos */
