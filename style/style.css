@@ -57,28 +57,43 @@ a {
 /* End Global Rules */
 /* Start Header */
 header {
-
     height: 80px;
     padding: 0 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 700;
+    background-color: var(--back-color);
 }
 
-header .container {
+header .coco {
+    width: 100%;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 @media (max-width:768px) {
-    header .container {
+    header {
+        height: fit-content;
+        padding-bottom: 20px;
+        top: 0;
+    }
+
+    header .coco {
         flex-direction: column;
     }
 }
 
+
+
 header .logo {
     color: var(--main-color);
+    position: relative;
     font-size: 25px;
     letter-spacing: -2px;
     transition: 0.5s;
+    padding-left: 20px;
 }
 
 header .logo:hover {
@@ -86,6 +101,7 @@ header .logo:hover {
 }
 
 header .right {
+    position: relative;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -107,6 +123,7 @@ header .media {
 header .media a {
     width: 20px;
     height: 20px;
+    padding: 0 12px;
 }
 
 
@@ -141,21 +158,31 @@ header .cv:hover {
 /* End Header */
 /* Start Hello */
 .hello {
-    height: fit-content;
-    overflow: hidden;
+    height: 100vh;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.hello .container {
+@media(max-width:350px) {
+    .hello {
+        margin-top: 60px;
+    }
+}
+
+.hello>.container {
     padding: 10px;
     display: flex;
     width: 100%;
+    height: 90%;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 }
 
 @media (max-width:767px) {
-    .hello .container {
+    .hello>.container {
         flex-direction: column;
         justify-content: center;
         text-align: center;
@@ -165,10 +192,10 @@ header .cv:hover {
 .hello .left {
     width: fit-content;
     color: white;
-    align-self: flex-start;
+    align-self: center;
     text-align: start;
     font-weight: bold;
-    padding-top: 15%;
+    height: 100;
 }
 
 @media (max-width:767px) {
@@ -227,7 +254,7 @@ header .cv:hover {
 }
 
 .hello .right {
-    width: 30%;
+    width: 45%;
 }
 
 @media (max-width:767px) {
@@ -243,16 +270,17 @@ header .cv:hover {
 
 .hello .right .photo img {
     width: 100%;
-    transform: scale(1.5);
+    z-index: 100;
+    height: 100%;
 }
 
 .hello .right .photo::before {
     content: "";
     position: absolute;
-    width: 105%;
-    height: 105%;
+    width: 90%;
+    height: 90%;
     background-color: var(--main-color);
-    top: 70%;
+    top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -283,17 +311,10 @@ header .cv:hover {
     padding: 10px;
     background-color: rgb(42, 43, 49);
     border-radius: 15px;
-    width: 245px;
+    width: 60%;
+    min-width: 245px;
 }
 
-/* @media (max-width:767px) {
-
-    .hello .right .icons {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-} */
 
 .hello .right .photo .icons a {
     background-color: white;
@@ -316,23 +337,117 @@ header .cv:hover {
 /* End Hello */
 /* Start Logos */
 .logos {
+    width: 100%;
+    height: 10%;
     background-color: rgb(44, 44, 52);
-    margin-top: 30px;
+    z-index: 400;
 }
 
 .logos .container {
+    height: 100px;
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.logos .logo {
-    width: 20%;
-}
-
-.logos .logo img {
-    width: 100%;
+@media(max-width:767px) {
+    .logos .img {
+        width: 30%;
+    }
 }
 
 /* End Logos */
+
+/* Start Skills */
+.me {
+    width: 100%;
+}
+
+
+.me .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media(max-width:767px) {
+    .me .container {
+        flex-direction: column;
+    }
+}
+
+.me .left {
+    width: 45%;
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width:767px) {
+    .me .left {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.me .left img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.me .right {
+    width: 45%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media(max-width:767px) {
+    .me .right {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+.me .right .title {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.me .right .work {
+    font-weight: bold;
+    font-size: 55;
+}
+
+.me .right .blabla {
+    color: gray;
+    margin: 30px 0;
+}
+
+.me .right .skills {}
+
+.me .right .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.me .right .skill .the-progress {
+    height: 5px;
+    background-color: rgb(83, 84, 93);
+    border-radius: 50px;
+    position: relative;
+}
+
+.me .right .skill .the-progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    border-radius: 50px;
+}
+
+/* End Skills */
