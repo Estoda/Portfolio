@@ -169,6 +169,7 @@ header .cv:hover {
 @media(max-width:767px) {
     .hello {
         padding-top: 300px;
+        height: fit-content
     }
 }
 
@@ -189,6 +190,7 @@ header .cv:hover {
 
 @media (max-width:767px) {
     .hello>.container {
+        height: fit-content;
         flex-direction: column;
         justify-content: center;
         text-align: center;
@@ -359,7 +361,7 @@ header .cv:hover {
 
 @media(max-width:767px) {
     .logos {
-        height: 200px;
+        height: fit-content;
     }
 
     .logos .img {
@@ -371,6 +373,7 @@ header .cv:hover {
 
 /* Start Skills */
 .me {
+    margin: 200px 0;
     width: 100%;
 }
 
