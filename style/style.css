@@ -166,9 +166,15 @@ header .cv:hover {
     justify-content: center;
 }
 
+@media(max-width:767px) {
+    .hello {
+        padding-top: 300px;
+    }
+}
+
 @media(max-width:350px) {
     .hello {
-        margin-top: 60px;
+        padding-top: 200px;
     }
 }
 
@@ -352,6 +358,10 @@ header .cv:hover {
 }
 
 @media(max-width:767px) {
+    .logos {
+        height: 200px;
+    }
+
     .logos .img {
         width: 30%;
     }
