@@ -123,7 +123,7 @@ header .media {
 header .media a {
     width: 20px;
     height: 20px;
-    padding: 0 12px;
+    padding: 10 20px;
 }
 
 
@@ -203,7 +203,7 @@ header .cv:hover {
     align-self: center;
     text-align: start;
     font-weight: bold;
-    height: 100;
+    height: 100%;
 }
 
 @media (max-width:767px) {
@@ -431,7 +431,7 @@ header .cv:hover {
 
 .me .right .work {
     font-weight: bold;
-    font-size: 55;
+    font-size: 55px;
 }
 
 .me .right .blabla {
@@ -439,7 +439,6 @@ header .cv:hover {
     margin: 30px 0;
 }
 
-.me .right .skills {}
 
 .me .right .skill h3 {
     display: flex;
@@ -459,8 +458,338 @@ header .cv:hover {
     left: 0;
     top: 0;
     height: 100%;
+    width: 0;
     background-color: var(--main-color);
     border-radius: 50px;
+    transition: 0.8s;
+}
+
+.me .right .skill .the-progress span::after {
+    position: absolute;
+    top: -20px;
+    left: 100%;
+}
+
+.me .right .skill .the-progress span.html::after {
+    content: "100%";
+}
+
+.me .right .skill .the-progress span.css::after {
+    content: "94%";
+}
+
+.me .right .skill .the-progress span.js::after {
+    content: "30%";
+}
+
+.me .right .skill .the-progress span.py::after {
+    content: "40%";
+}
+
+.me:hover .right .skill .the-progress span.html {
+    width: 100%;
+}
+
+.me:hover .right .skill .the-progress span.css {
+    width: 94%;
+}
+
+.me:hover .right .skill .the-progress span.js {
+    width: 30%;
+}
+
+
+.me:hover .right .skill .the-progress span.py {
+    width: 40%;
 }
 
 /* End Skills */
+/* Start About Me */
+.about-me .container {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.about-me .container>.left {
+    width: calc(50% - 50px);
+}
+
+.about-me .container>.left p {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.about-me .container>.left h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 55px;
+    margin-bottom: 100px;
+}
+
+.about-me .container>.left .img {
+    width: 100%;
+    background-color: var(--main-color);
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.about-me .left .img::after {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    background-color: var(--back-color);
+    top: -20%;
+    right: -20%;
+    transform: rotate(45deg);
+}
+
+.about-me .left img {
+    width: 100%;
+}
+
+.about-me .container>.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    margin: auto 0;
+}
+
+.about-me .container>.right,
+.about-me .container>.right a {
+    width: calc(50% - 50px);
+    color: white;
+}
+
+.about-me .container>.right .next {
+    color: gray;
+}
+
+.about-me .container>.right .personal {
+    margin-top: 30px;
+}
+
+.about-me .container>.right .personal>h1 {
+    font-weight: bold;
+}
+
+.about-me .container>.right .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(max-width:550px) {
+    .about-me .container>.right .info {
+        flex-direction: column;
+    }
+
+    .about-me .container>.right .info .left {
+        width: 100%;
+    }
+
+    .about-me .container>.right .info .right {
+        width: 100%;
+    }
+}
+
+@media(max-width:767px) {
+    .about-me .container {
+        flex-direction: column;
+    }
+
+    .about-me .container>.left {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .about-me .container>.right {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.about-me .container>.right .info>div {
+    width: calc(50% - 5px);
+    overflow: hidden;
+}
+
+.about-me .container .info div {
+    margin-bottom: 20px;
+}
+
+.about-me .container .info div h3 {
+    margin: 0;
+}
+
+.about-me .container .info div p,
+.about-me .container .info div p a {
+    color: gray;
+    margin: 0;
+}
+
+.about-me .container .personal>a {
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: var(--back-color);
+    border-radius: 50px;
+    transition: 0.5s;
+    border: 1px solid var(--main-color);
+    display: block;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about-me .container .personal>a:hover {
+    background-color: var(--back-color);
+    color: var(--main-color);
+
+}
+
+/* End About Me */
+
+/* Start Contact */
+.contact {
+    margin: 100px 0;
+}
+
+.contact .container .text h1 {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    max-width: 500px;
+    margin: -10px auto 50px;
+    font-size: 45px;
+}
+
+.contact .text p {
+    color: var(--main-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact .details {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact .details .left {
+    width: calc(50% - 5px);
+    color: white;
+
+}
+
+.contact .details .left p {
+    color: gray;
+}
+
+.contact .details .left>div {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+}
+
+.contact .details .left>div .icon {
+    background-color: rgb(20, 20, 20);
+    min-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .details .left>div .icon i {
+    color: white;
+}
+
+.contact .details .right {
+    width: calc(50% - 5px);
+}
+
+.contact .details .right form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact .details .right form input {
+    width: calc(50% - 7px);
+    background-color: var(--back-color);
+    outline: none;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    caret-color: gray;
+    color: gray;
+}
+
+.contact .details .right form textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+    background-color: var(--back-color);
+    outline: none;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    caret-color: gray;
+    font-weight: bold;
+    color: gray;
+}
+
+.contact .details .right form input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.contact .details .right form input[type="submit"] {
+    background-color: var(--main-color);
+    border-radius: 50px;
+    width: fit-content;
+    padding: 10px 20px;
+    border: 1px solid var(--main-color);
+    transition: 0.5s;
+    color: var(--back-color);
+}
+
+.contact .details .right form input[type="submit"]:hover {
+    background-color: var(--back-color);
+    color: var(--main-color);
+}
+
+@media(max-width:767px) {
+    .contact .details {
+        flex-direction: column;
+    }
+
+    .contact .details .left {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .contact .details .left>div {}
+
+    .contact .details .right {
+        width: 100%;
+    }
+}
+
+@media(max-width:350px) {
+    .contact .details .left {
+        overflow: hidden;
+    }
+}
+
+/* End Contact */
